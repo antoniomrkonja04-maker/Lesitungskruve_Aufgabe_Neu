@@ -1,29 +1,26 @@
 import matplotlib.pyplot as plt
-import csv
 from load_data import load_data
 from sort import bubble_sort 
 
-x = []
-y = []
-
+# Daten laden und Power-Werte extrahieren
 data = load_data("activity.csv")
 power_values = list(data["PowerOriginal"])
+
+# Sortieren 
 sorted_power_values = bubble_sort(power_values)
+sorted_power_values_desc = sorted_power_values[::-1]  # Umkehren, dass ses absteigend sortiert 
 
-x_values = list(range(len(sorted_power_values)))
-y_values = sorted_power_values[::-1] 
+# X-Achse: 0 bis len 
+x_values = list(range(len(sorted_power_values_desc)))
 
-with open('activity.csv') as csvfile:
-    plots = csv.reader(csvfile, delimiter=',')
-    next(plots, None)  # Überspringt die erste Zeile mit den Spaltennamen
-    for row in plots:
-        x.append(int(row[0]))
-        y.append(float(row[1]))
-
-plt.plot(x, y, label="Power", color='red', marker='o')
-plt.xlabel("Zeit(s)")
-plt.ylabel("Kraft(W)")
-plt.grid(True)
+# Plot
+plt.figure(figsize=(10, 6))
+plt.plot(x_values, sorted_power_values_desc, label="Power (sortiert)", color='blue', linestyle='solid', linewidth=1.5, markersize=4)
+plt.xlabel("Zeit (s)")
+plt.ylabel("Kraft (W)")
+plt.grid(True, alpha=0.3)
 plt.title('Leistungskurve')
-plt.legend(loc="lower right")
+plt.legend(loc="upper right")
+plt.tight_layout()
+plt.fill_between(x_values, sorted_power_values_desc, color='blue', alpha=0.1)  # Füllt den Bereich unter der Kurve
 plt.show()
