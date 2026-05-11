@@ -1,2 +1,2 @@
-![Leistungskruve] (images/Figure_1.png)
+![Leistungskruve] (.images/Figure_1.png)
 
