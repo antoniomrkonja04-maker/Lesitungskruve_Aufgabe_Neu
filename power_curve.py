@@ -15,12 +15,12 @@ x_values = list(range(len(sorted_power_values_desc)))
 
 # Plot
 plt.figure(figsize=(10, 6))
-plt.plot(x_values, sorted_power_values_desc, label="Power (sortiert)", color='red', linestyle='solid', linewidth=1.5, markersize=4)
+plt.plot(x_values, sorted_power_values_desc, label="Power (sortiert)", color='blue', linestyle='solid', linewidth=1.5, markersize=4)
 plt.xlabel("Zeit (s)")
-plt.ylabel("Kraferwr (W)")
+plt.ylabel("Kraft (W)")
 plt.grid(True, alpha=0.3)
 plt.title('Leistungskurve')
 plt.legend(loc="upper right")
 plt.tight_layout()
-plt.fill_between(x_values, sorted_power_values_desc, color='red', alpha=0.1)  # Füllt den Bereich unter der Kurve
+plt.fill_between(x_values, sorted_power_values_desc, color='blue', alpha=0.1)  # Füllt den Bereich unter der Kurve
 plt.show()
