@@ -5,7 +5,7 @@ def bubble_sort(activity):
         swapped = False
         for j in range (0, n - i - 1):
             if activity[j] > activity[j+1]:
-                activity[j], activity[j+1] = acitvity[j+1], activity[j]
+                activity[j], activity[j+1] = activity[j+1], activity[j]
                 swapped = True
             if not swapped:
                 break
