@@ -14,3 +14,6 @@ Dieses Projekt lädt Aktivitätsdaten aus einer CSV-Datei, sortiert die Leistung
 
 git clone https://github.com/antoniomrkonja04-maker/Lesitungskruve_Aufgabe_Neu.git
 cd Lesitungskruve_Aufgabe_Neu
+
+### 2. Im Terminal alle Pakete mit #pip install -r "requirements.txt"# installieren
+
